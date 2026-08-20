@@ -9,8 +9,7 @@ const payment = (amount, paid_date) => ({ amount, paid_date });
 
 // --- Unit tests on the rules, using a synthetic loan ---------------------
 
-// 8-month loan disbursed 15 Feb 2026, 1100/month. As of 20 Aug 2026 six
-// installments are due (Mar..Aug).
+// 8-month loan disbursed 15 Feb 2026, 1100/month. As of 20 Aug 2026 six installments are due (Mar..Aug).
 const sampleLoan = {
   loan_id: 'L-TEST',
   borrower_name: 'Test Borrower',

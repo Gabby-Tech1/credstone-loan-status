@@ -3,9 +3,7 @@ const { parseDate } = require('../lib/dates');
 const { cleanRepayments } = require('./cleaning');
 const { LOANS_CSV, REPAYMENTS_CSV } = require('../config');
 
-// Loads both CSV files, cleans the repayments, and organises everything in
-// memory. The files are small and never change while the server runs, so we
-// read them once and cache the result.
+// Loads both CSV files, cleans the repayments, and organises everything in memory. The files are small and never change while the server runs, so we read them once and cache the result.
 let cache;
 
 function loadData() {

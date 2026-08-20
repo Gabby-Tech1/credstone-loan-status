@@ -1,8 +1,6 @@
 const { addMonths } = require('../lib/dates');
 
-// Turn a loan into its installment schedule. The first installment is due one
-// month after disbursement, the second two months after, and so on for
-// `term_months` months. Each installment is for the full monthly installment.
+// Turn a loan into its installment schedule. The first installment is due one month after disbursement, the second two months after, and so on for `term_months` months. Each installment is for the full monthly installment.
 function buildSchedule(loan) {
   const schedule = [];
   for (let k = 1; k <= loan.term_months; k++) {

@@ -5,8 +5,7 @@ const { TODAY } = require('../config');
 // Round to 2 decimals for money output.
 const round2 = (n) => Math.round(n * 100) / 100;
 
-// Work out the risk band. Order matters: CLOSED is checked before anything
-// about days past due, exactly as the brief lists it.
+// Work out the risk band. Order matters: CLOSED is checked before anything about days past due, exactly as the brief lists it.
 function riskBand(totalRepaid, totalRepayable, daysPastDue) {
   if (totalRepaid >= totalRepayable) return 'CLOSED';
   if (daysPastDue === 0) return 'CURRENT';
@@ -15,10 +14,7 @@ function riskBand(totalRepaid, totalRepayable, daysPastDue) {
   return 'DEFAULT';
 }
 
-// Days past due: apply the borrower's total payments against the schedule in
-// order, regardless of when they actually paid. The first installment we can't
-// fully cover is the earliest one in arrears; days past due is measured from
-// its due date. If that installment isn't due yet, the borrower is on track.
+// Days past due: apply the borrower's total payments against the schedule in order, regardless of when they actually paid. The first installment we can't fully cover is the earliest one in arrears; days past due is measured from its due date. If that installment isn't due yet, the borrower is on track.
 function daysPastDue(schedule, totalRepaid, today) {
   let remaining = totalRepaid;
   for (const installment of schedule) {
@@ -39,12 +35,10 @@ function computeStatus(loan, repayments, flags = [], today = TODAY) {
 
   const totalRepayable = round2(loan.monthly_installment * loan.term_months);
 
-  // Total repaid is the sum of the cleaned payments. Reversals are already
-  // negative, so they subtract here automatically.
+  // Total repaid is the sum of the cleaned payments. Reversals are already negative, so they subtract here automatically.
   const totalRepaid = round2(repayments.reduce((sum, r) => sum + r.amount, 0));
 
-  // Expected to date = installment x (installments whose due date has passed),
-  // capped at the total repayable.
+  // Expected to date = installment x (installments whose due date has passed), capped at the total repayable.
   const installmentsDue = schedule.filter((s) => s.due_date <= today).length;
   const expectedToDate = Math.min(
     round2(loan.monthly_installment * installmentsDue),

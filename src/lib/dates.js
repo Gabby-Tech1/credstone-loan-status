@@ -1,5 +1,4 @@
-// Small date helpers. Every date in this project is a calendar date (no time),
-// so we parse everything to UTC midnight to avoid timezone drift.
+// Small date helpers. Every date in this project is a calendar date (no time), so we parse everything to UTC midnight to avoid timezone drift.
 
 const MS_PER_DAY = 24 * 60 * 60 * 1000;
 
@@ -17,8 +16,7 @@ function formatDate(date) {
   return `${year}-${month}-${day}`;
 }
 
-// Add n whole months, keeping the same day-of-month. If the target month is
-// shorter (e.g. 31 Jan + 1 month), clamp to the last day of that month.
+// Add n whole months, keeping the same day-of-month. If the target month is shorter (e.g. 31 Jan + 1 month), clamp to the last day of that month.
 function addMonths(date, n) {
   const day = date.getUTCDate();
   const result = new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth() + n, day));
