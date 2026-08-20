@@ -1,0 +1,16 @@
+{
+  "name": "credstone-loan-status",
+  "version": "1.0.0",
+  "description": "Reads loans.csv and repayments.csv and reports the repayment status of each loan.",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=18.13"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

@@ -1,0 +1,13 @@
+loan_id,borrower_name,principal,term_months,monthly_installment,disbursement_date
+L-1001,Ama Boateng,8000.00,8,1100.00,2026-02-15
+L-1002,Kofi Mensah,9000.00,9,1150.00,2025-11-10
+L-1003,Yaw Owusu,4800.00,6,900.00,2026-01-05
+L-1004,Akosua Darko,12000.00,12,1150.00,2025-06-20
+L-1005,Kwabena Asare,3000.00,3,1100.00,2026-04-01
+L-1006,Efua Nyarko,7500.00,6,1400.00,2026-03-12
+L-1007,Kojo Adjei,5000.00,5,950.00,2026-02-28
+L-1008,Adwoa Sarpong,8400.00,8,1150.00,2025-12-03
+L-1009,Kwame Antwi,6600.00,6,1250.00,2026-01-22
+L-1010,Abena Frimpong,4200.00,4,1150.00,2026-05-08
+L-1011,Yaa Asantewaa,10000.00,10,1120.00,2025-09-15
+L-1012,Fiifi Cudjoe,5400.00,6,1000.00,2026-06-30
